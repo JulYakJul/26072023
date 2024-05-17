@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка ответов на вопросы</title>
+    <style>
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+    <script>
+        function checkAnswer(questionNumber) {
+            var answer;
+            var correctAnswer;
+            var explanation;
+
+            switch (questionNumber) { 
+                case 1:
+                    answer = document.getElementById("answer1").value.toLowerCase();
+                    correctAnswer = "8037";
+                    explanation = "Йес, ты получил часть кода - ала";
+                    incorrectExplanation = "Нет, твой ответ не правильный, попробуй еще раз.";
+                    break;
+                case 2:
+                    answer = document.getElementById("answer2").value.toLowerCase();
+                    correctAnswer = "4961";
+                    explanation = "Йес, ты получил часть кода - ва";
+                    incorrectExplanation = "Нет";
+                    break;
+                case 3:
+                    answer = document.getElementById("answer3").value.toLowerCase();
+                    correctAnswer = "4";
+                    explanation = "Йес, ты получил часть кода - яш";
+                    incorrectExplanation = "Нет";
+                    break;
+                case 4:
+                    answer = document.getElementById("answer4").value.toLowerCase();
+                    correctAnswer = "яшалава";
+                    explanation = "Поздравляю, ты прошел квест! :D Фууух, это было сложно! Теперь чтобы получить свой приз назови кодовое слово мне при втрече (нет, не то, что ты сейчас ввел). Кодовое слово находится в коде этой страницы в самом низу";
+                    incorrectExplanation = "Нет";
+                    break;
+                default:
+                    break;
+            }
+
+            if (answer === correctAnswer) {
+                document.getElementById("result" + questionNumber).innerHTML = explanation;
+            } else {
+                document.getElementById("result" + questionNumber).innerHTML = incorrectExplanation;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Введи код с картинки</h1>
+    <img src="code.jpg" alt="картинка">
+    <br>
+    <input type="text" id="answer1">
+    <button onclick="checkAnswer(1)">Проверить</button>
+    <p id="result1"></p>
+
+    <h1>Введи код с картинок (в коде то же кол-во цифр, что и в предыдущем вопросе)</h1>
+    <img src="notsix.jpg" alt="картинка">
+    <img src="pic.jpg" alt="картинка">
+    <img src="q.jpg" alt="картинка">
+    <br>
+    <input type="text" id="answer2">
+    <button onclick="checkAnswer(2)">Проверить</button>
+    <p id="result2"></p>
+
+    <h1>1,5 курицы за 1,5 дня несут 1,5 яйца.
+        Сколько яиц снесут 2 курицы за 3 дня?</h1>
+    <input type="text" id="answer3">
+    <button onclick="checkAnswer(3)">Проверить</button>
+    <p id="result3"></p>
+
+    <h1>Если ты огадал все ответы, то введи код из ответов в порядке вопросов: 312</h1>
+    <input type="text" id="answer4">
+    <button onclick="checkAnswer(4)">Проверить</button>
+    <p id="result4"></p>
+</body>
+</html>
+
+<!-- Я люблю тебя! ;) -->
