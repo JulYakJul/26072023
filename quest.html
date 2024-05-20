@@ -12,76 +12,161 @@
     </style>
     <script>
         function checkAnswer(questionNumber) {
-            var answer;
-            var correctAnswer;
-            var explanation;
+    var answer;
+    var correctAnswer;
+    var explanation;
+    var incorrectExplanation;
 
-            switch (questionNumber) { 
-                case 1:
-                    answer = document.getElementById("answer1").value.toLowerCase();
-                    correctAnswer = "8037";
-                    explanation = "Ес, ты получил часть кода - ала";
-                    incorrectExplanation = "Ноу(Нет(No))";
-                    break;
-                case 2:
-                    answer = document.getElementById("answer2").value.toLowerCase();
-                    correctAnswer = "4961";
-                    explanation = "Ес, ты получил часть кода - ва";
-                    incorrectExplanation = "Ноу(Нет(No))";
-                    break;
-                case 3:
-                    answer = document.getElementById("answer3").value.toLowerCase();
-                    correctAnswer = "4";
-                    explanation = "Ес, ты получил часть кода - яш";
-                    incorrectExplanation = "Ноу(Нет(No))";
-                    break;
-                case 4:
-                    answer = document.getElementById("answer4").value.toLowerCase();
-                    correctAnswer = "яшалава";
-                    explanation = "Поздравляю, ты прошел квест! :D Фууух, это было сложно! Теперь чтобы получить свой приз назови кодовое слово мне при втрече (нет, не то, что ты сейчас ввел). Кодовое слово находится в коде этой страницы в самом низу";
-                    incorrectExplanation = "Ноу(Нет(No))";
-                    break;
-                default:
-                    break;
-            }
-
+    switch (questionNumber) { 
+        case 1:
+            answer = document.getElementById("answer1").value.toLowerCase();
+            correctAnswer = "ты солнце";
+            explanation = "Ес, ты получил часть кода - н";
+            incorrectExplanation = "Ноу(No)";
             if (answer === correctAnswer) {
-                document.getElementById("result" + questionNumber).innerHTML = explanation;
+                document.getElementById("result1").innerHTML = explanation;
+                document.getElementById("successImage").style.display = "block";
             } else {
-                document.getElementById("result" + questionNumber).innerHTML = incorrectExplanation;
+                document.getElementById("result1").innerHTML = incorrectExplanation;
             }
-        }
+            break;
+        case 2:
+            answer = document.getElementById("answer2").value.toLowerCase();
+            correctAnswer = "4151";
+            explanation = "Ес, ты получил часть кода - ка";
+            incorrectExplanation = "Ноу(No)";
+            if (answer === correctAnswer) {
+                document.getElementById("result2").innerHTML = explanation;
+            } else {
+                document.getElementById("result2").innerHTML = incorrectExplanation;
+            }
+            break;
+
+        case 3:
+            answer = document.getElementById("answer3").value.toLowerCase();
+            correctAnswer = "оба варианта верны";
+            explanation = "Ес, ты получил часть кода - ич";
+            incorrectExplanation = "Ноу(No)";
+            if (answer === correctAnswer) {
+                document.getElementById("result3").innerHTML = explanation;
+            } else {
+                document.getElementById("result3").innerHTML = incorrectExplanation;
+            }
+            break;
+
+        case 4:
+            answer = document.getElementById("answer4").value.toLowerCase();
+            correctAnswer = "4";
+            explanation = "Ес, ты получил часть кода - м";
+            incorrectExplanation = "Ноу(No)";
+            if (answer === correctAnswer) {
+                document.getElementById("result4").innerHTML = explanation;
+                document.getElementById("successImage3").style.display = "block";
+            } else {
+                document.getElementById("result4").innerHTML = incorrectExplanation;
+            }
+            break;
+
+        case 5:
+            answer = document.getElementById("answer5").value.toLowerCase();
+            correctAnswer = "хисока";
+            explanation = "Ес, ты получил часть кода - яу";
+            incorrectExplanation = "Ноу(No)";
+            if (answer === correctAnswer) {
+                document.getElementById("result5").innerHTML = explanation;
+                document.getElementById("successImage3").style.display = "block";
+            } else {
+                document.getElementById("result5").innerHTML = incorrectExplanation;
+            }
+        break;
+
+        case 6:
+            answer = document.getElementById("answer6").value.toLowerCase();
+            correctAnswer = "яумничка";
+            explanation = "Поздравляю, ты прошел квест! :D Фууух, это было сложно! Теперь чтобы получить свой приз назови кодовое слово мне при втрече. !Кодовое слово находится в коде этой страницы в самом низу!";
+            incorrectExplanation = "Ноу(Нет(No))";
+            if (answer === correctAnswer) {
+                document.getElementById("result6").innerHTML = explanation;
+                document.getElementById("successImage2").style.display = "block";
+            } else {
+                document.getElementById("result6").innerHTML = incorrectExplanation;
+            }
+            break;
+
+        default:
+            break;
+    }
+}
     </script>
 </head>
+
 <body>
     <h1>Поздравляю, ты добрался до второго этапа квеста! Теперь будет сложно, но я уверена ты справишься с;</h1>
-    <h2>1. Введи код с картинки</h2>
-    <img src="code.jpg" alt="картинка">
+
+    <h2>1. Че тут написано?</h2>
+    <img src="pics/kanji.jpeg" alt="картинка">
+    <img src="pics/kanji1.jpeg" alt="картинка">
     <br>
     <input type="text" id="answer1">
     <button onclick="checkAnswer(1)">Проверить</button>
     <p id="result1"></p>
+    <img id="successImage" src="pics/дакактыэтоделаешь.jpg" alt="Поздравляю!" style="display: none;">
 
-    <h2>2. Введи код с картинок (в коде то же кол-во цифр, что и в предыдущем вопросе)</h2>
-    <img src="notsix.jpg" alt="картинка">
-    <img src="pic.jpg" alt="картинка">
-    <img src="q.jpg" alt="картинка">
+    <h2>2. Введи четырехзначеный код</h2>
+    <img src="pics/notsix.jpg" alt="картинка">
+    <img src="pics/pic.jpg" alt="картинка">
+    <img src="pics/q.jpg" alt="картинка">
     <br>
     <input type="text" id="answer2">
     <button onclick="checkAnswer(2)">Проверить</button>
     <p id="result2"></p>
 
-    <h2>3. 1,5 курицы за 1,5 дня несут 1,5 яйца.
-        Сколько яиц снесут 2 курицы за 3 дня?</h2>
+    <!-- "Я сделал выбор, и этот выбор - Ты!" -->
+    <!-- Стимфония. Охота на ведьм -->
+    
+    <h2>3. Че будет если нажать на Отмена? 
+        Варианты: отмена отмены / отмена / оба варианта верны 
+        (ответ введи словами)</h2>
+    <img src="pics/cancel.jpg" alt="картинка">
+    <br>
     <input type="text" id="answer3">
     <button onclick="checkAnswer(3)">Проверить</button>
     <p id="result3"></p>
 
-    <h2>Если ты огадал все ответы, то введи код из ответов в порядке вопросов: 312</h2>
+    <!-- "Стой, можной я с тобой?" -->
+    <!-- Ap$ent, DVN. Можно я с тобой -->
+
+    <h2>4. 1,5 курицы за 1,5 дня несут 1,5 яйца.
+        Сколько яиц снесут 2 курицы за 3 дня? (не бей сильно)</h2>
     <input type="text" id="answer4">
     <button onclick="checkAnswer(4)">Проверить</button>
     <p id="result4"></p>
+    <img id="successImage3" src="pics/небей.jpg" alt="Поздравляю!" style="display: none;">
+
+    <!-- "Как горяча твоя ладонь
+    Как холодны твои глаза
+    Но не бесчуcственны, а просто холодны" -->
+    <!-- Осталось два кедра. Помнить и любить-->
+
+    <h2>5. как звали ну того третьестепенного персонажа из ХантерХантер который был в первых сериях ну 
+        с цветными волосами на экзамене был еще такой имбовый блин не могу вспомнить ааа ну как его.......</h2>
+    <input type="text" id="answer5">
+    <button onclick="checkAnswer(5)">Проверить</button>
+    <p id="result5"></p>
+    <img id="successImage3" src="pics/небей.jpg" alt="Поздравляю!" style="display: none;">
+
+    <h2>Если ты огадал все ответы, то введи код из ответов в порядке вопросов: 54132</h2>
+    <input type="text" id="answer6">
+    <button onclick="checkAnswer(6)">Проверить</button>
+    <img id="successImage2" src="pics/Димон.jpg" alt="Поздравляю!" style="display: none;">
+    <p id="result6"></p>
+
+    <!-- Валерий Меладзе. Салют, Вера -->
+
 </body>
 </html>
+
+<!-- Слушай песенки, жди меня
+и знай... -->
 
 <!-- Я люблю тебя! ;) -->
